@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h2>List of Cafes</h2>
+<table>
+    <tr>
+        <th>Name</th>
+        <th>Location</th>
+        <th>WiFi Strength</th>
+        <th>Power Availability</th>
+    </tr>
+    {% for cafe in cafes %}
+    <tr>
+        <td>{{ cafe['name'] }}</td>
+        <td>{{ cafe['location'] }}</td>
+        <td>{{ cafe['wifi_strength'] }}</td>
+        <td>{{ 'Yes' if cafe['power_availability'] else 'No' }}</td>
+    </tr>
+    {% endfor %}
+</table>
+{% endblock %}
